@@ -1,0 +1,35 @@
+import React from 'react'
+import { Phone } from 'lucide-react'
+import { MapPin } from 'lucide-react'
+import { Link } from 'lucide-react'
+
+
+const Card = ({name, brewery_type, country, state, street, phone, website_url}) => {
+  return (
+    <div className='px-4 py-2 bg-white rounded-md shadow-sm m-4 cursor-pointer w-full'>
+        <div className='flex items-center justify-between'>
+          <h1 className='font-semibold '>{name}</h1>
+          <h2 className='text-gray-500 text-[0.8rem] font-thin'>{brewery_type}</h2>
+        </div>     
+        <div className='mt-3'>
+          <div className='flex items-center'>
+            {/* <img src='' alt='address'/> */}
+            <MapPin className='w-[15px] h-[15px] text-gray-800 me-2'/>
+            <p className='text-gray-500 text-[0.8rem]'>{country}, {state}, {street}</p>
+          </div>
+
+          <div className='flex items-center mt-2'>
+            <Phone className='w-[15px] h-[15px] text-gray-800 me-2'/>
+            <p className='text-gray-500 text-[0.8rem] '>{phone}</p>
+          </div>
+
+          <div className='flex items-center mt-2'>
+            <Link className='w-[15px] h-[15px] text-gray-800 me-2'/>
+            <a className='text-gray-500 text-[0.8rem] hover:underline' href={website_url}>{website_url}</a>
+          </div>
+        </div>
+    </div>
+  )
+}
+
+export default Card
