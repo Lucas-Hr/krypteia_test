@@ -9,5 +9,5 @@ createRoot(document.getElementById('root')).render(
     <BreweryProvider>
       <App />
     </BreweryProvider>
-  </StrictMode>,
+  </StrictMode>
 )
