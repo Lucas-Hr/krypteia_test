@@ -40,9 +40,9 @@ const Card = ({name, brewery_type, country, state, city, street, phone, website_
         <div className='flex items-center '>
           <MapPinned className='w-[15px] h-[15px] text-gray-800 me-2'/>
           <p className='text-gray-500 text-[0.5rem]'>
-          {latitude}
+          {latitude === 0 ? "Unknown" : latitude}
           <br />
-          {longitude}
+          {longitude === 0 ? "Unknown" : longitude}
           </p>
         </div>   
         { view === "card" && <button className='bg-blue-500 text-white px-2 py-1 rounded-sm text-[0.8rem] cursor-pointer' onClick={viewOnMap}>View on map</button>}

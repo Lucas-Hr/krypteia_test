@@ -17,7 +17,7 @@ const App = () => {
         <SearchBrewery setSearch={setSearch} />
 
       {
-        view === 'map' ? <Map search={search} position={position} zoom={zoom}/> :
+        view === 'map' ? <Map search={search} position={position} zoom={zoom} /> :
         <div className=" flex flex-wrap  mt-12">
           {
             brewery.filter((b) => {
