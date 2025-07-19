@@ -13,7 +13,7 @@ const App = () => {
   const [zoom, setZoom] = useState(5)
   return (
     <div className="px-10 py-4 bg-gray-100 h-full">
-        <Switch setView={setView} isActive={isActive} setIsActive={setIsActive}/>
+        <Switch setView={setView} isActive={isActive} setIsActive={setIsActive} setZoom={setZoom}/>
         <SearchBrewery setSearch={setSearch} />
 
       {
@@ -26,7 +26,7 @@ const App = () => {
                     : b.name.toLowerCase().includes(search);
                 }).map((b, index) => {
               return (
-                <div className="m-2" key={index}>
+                <div className="m-2 grow" key={index}>
                   <Card 
                     name={b.name} 
                     brewery_type={b.brewery_type} 

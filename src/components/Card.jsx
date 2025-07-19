@@ -10,11 +10,11 @@ const Card = ({name, brewery_type, country, state, city, street, phone, website_
     setView("map");
     setIsActive({map : true, layout : false});
     setPosition({latitude : latitude, longitude : longitude});
-    setZoom(15)
+    setZoom(15);
   }
 
   return (
-    <div className='px-4 py-2 bg-white rounded-md shadow-sm cursor-pointer'>
+    <div className='px-4 py-2 bg-white rounded-md shadow-sm cursor-pointer '>
       <div className='flex items-center justify-between'>
         <h1 className='font-semibold '>{name}</h1>
         <h2 className='text-gray-500 text-[0.8rem] font-thin ps-2'>{brewery_type}</h2>
