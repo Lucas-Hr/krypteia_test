@@ -10,11 +10,11 @@ const Card = ({name, brewery_type, country, state, city, street, phone, website_
     setView("map");
     setIsActive({map : true, layout : false});
     setPosition({latitude : latitude, longitude : longitude});
-    setZoom(15)
+    setZoom(15);
   }
 
   return (
-    <div className='px-4 py-2 bg-white rounded-md shadow-sm cursor-pointer'>
+    <div className='px-4 py-2 bg-white rounded-md shadow-sm cursor-pointer '>
       <div className='flex items-center justify-between'>
         <h1 className='font-semibold '>{name}</h1>
         <h2 className='text-gray-500 text-[0.8rem] font-thin ps-2'>{brewery_type}</h2>
@@ -40,9 +40,9 @@ const Card = ({name, brewery_type, country, state, city, street, phone, website_
         <div className='flex items-center '>
           <MapPinned className='w-[15px] h-[15px] text-gray-800 me-2'/>
           <p className='text-gray-500 text-[0.5rem]'>
-          {latitude}
+          {latitude === 0 ? "Unknown" : latitude}
           <br />
-          {longitude}
+          {longitude === 0 ? "Unknown" : longitude}
           </p>
         </div>   
         { view === "card" && <button className='bg-blue-500 text-white px-2 py-1 rounded-sm text-[0.8rem] cursor-pointer' onClick={viewOnMap}>View on map</button>}
