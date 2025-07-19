@@ -5,7 +5,7 @@ import Card from './Card';
 import 'leaflet/dist/leaflet.css';
 import MapPin from '../assets/MapPin';
 
-const Map = () => {
+const Map = ({search}) => {
     const {brewery, setBrewery} = useBrewery();
   return (
     <div className='relative mt-12'>
@@ -19,7 +19,11 @@ const Map = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {
-                brewery.map((b, index) => {
+                brewery.filter((b) => {
+                return search.toLowerCase() === ""
+                    ? b
+                    : b.name.toLowerCase().includes(search);
+                }).map((b, index) => {
                     return (
                         <Marker key={index} position={[`${Number(b.latitude) ?? 0}` , `${Number(b.longitude) ?? 0}`]}>
                             <Popup>
@@ -29,7 +33,6 @@ const Map = () => {
                     )
                 })
             }
-            
         </MapContainer>
     </div>
     
