@@ -8,12 +8,12 @@ import MapPin from '../assets/MapPin';
 const Map = ({search, position, zoom}) => {
     const {brewery} = useBrewery();
   return (
-    <div className='relative mt-12'>
+    <div className='relative mt-12 z-10 '>
         <div className='bg-white rounded-sm flex items-center px-4 py-2 absolute z-20 top-[20px] right-[10px] '> 
                 <MapPin />
                 <p className='ms-2 text-sm font-semibold'>Brewery</p>
         </div>
-        <MapContainer center={[`${position.latitude}` ?? 0, `${position.longitude}` ?? 0]} zoom={zoom} scrollWheelZoom={false} style={{width : "100%", height : "80vh"}} className='relative  z-10' >
+        <MapContainer center={[`${position.latitude}` ?? 0, `${position.longitude}` ?? 0]} zoom={zoom} scrollWheelZoom={false} style={{width : "100%", height : "85vh"}} className='relative z-10' >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

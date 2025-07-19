@@ -4,8 +4,24 @@ import { MapPin } from 'lucide-react'
 import { Link } from 'lucide-react'
 import { MapPinned } from 'lucide-react'
 
-const Card = ({name, brewery_type, country, state, city, street, phone, website_url, latitude, longitude, view, setView, isActive, setIsActive, setPosition, setZoom}) => {
-
+const Card = ({
+  name, 
+  brewery_type, 
+  country, 
+  state, 
+  city, 
+  street, 
+  phone, 
+  website_url, 
+  latitude, 
+  longitude, 
+  view, 
+  setView, 
+  setIsActive, 
+  setPosition, 
+  setZoom
+  }) => {
+    
   const viewOnMap = () => {
     setView("map");
     setIsActive({map : true, layout : false});
@@ -14,7 +30,7 @@ const Card = ({name, brewery_type, country, state, city, street, phone, website_
   }
 
   return (
-    <div className='px-4 py-2 bg-white rounded-md shadow-sm cursor-pointer '>
+    <div className='px-4 py-2 bg-white rounded-md shadow-sm cursor-pointer m-2'>
       <div className='flex items-center justify-between'>
         <h1 className='font-semibold '>{name}</h1>
         <h2 className='text-gray-500 text-[0.8rem] font-thin ps-2'>{brewery_type}</h2>
