@@ -10,11 +10,11 @@ const Map = ({search, position, zoom}) => {
     console.log(position)
   return (
     <div className='relative mt-12'>
-        <div className='bg-white rounded-sm flex items-center px-4 py-2 absolute z-20 top-[20px] right-[100px]'> 
+        <div className='bg-white rounded-sm flex items-center px-4 py-2 absolute z-20 top-[20px] right-[10px] '> 
                 <MapPin />
                 <p className='ms-2 text-sm font-semibold'>Brewery</p>
         </div>
-        <MapContainer center={[`${Number(position.latitude) ?? 0}` , `${Number(position.longitude) ?? 0}`]} zoom={zoom} scrollWheelZoom={false} style={{width : "90vw", height : "80vh"}} className='relative  z-10' >
+        <MapContainer center={[`${Number(position.latitude) ?? 0}` , `${Number(position.longitude) ?? 0}`]} zoom={zoom} scrollWheelZoom={false} style={{width : "100%", height : "80vh"}} className='relative  z-10' >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
