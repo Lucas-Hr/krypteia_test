@@ -1,20 +1,26 @@
-import { use, useState } from "react"
+import { useState } from "react"
 import Map from "./components/Map"
 import Card from "./components/Card"
 import { useBrewery } from "./context/breweryContext"
 import Switch from "./components/Switch"
 import SearchBrewery from "./components/SearchBrewery"
 const App = () => {
-  const {brewery, setBrewery} = useBrewery()
+  const {brewery} = useBrewery()
   const [view, setView] = useState("map")
   const [search, setSearch] = useState("")
   const [isActive, setIsActive] = useState({map : true, layout : false});
   const [position, setPosition] = useState({latitude : 35.25738891, longitude : -97.46818222});
   const [zoom, setZoom] = useState(5)
   return (
-    <div className="px-10 py-4 bg-gray-100 h-full">
-        <Switch setView={setView} isActive={isActive} setIsActive={setIsActive} setZoom={setZoom}/>
-        <SearchBrewery setSearch={setSearch} />
+    <div className="px-10 py-4 h-full relative">
+      <div className="flex items-center fixed z-20">
+        <h1 className="text-2xl font-semibold">Brewery App</h1>
+        <div className="flex items-center ms-4 ">
+          <Switch setView={setView} isActive={isActive} setIsActive={setIsActive} setZoom={setZoom}/>
+          <SearchBrewery setSearch={setSearch} />
+        </div>
+      </div>
+        
 
       {
         view === 'map' ? <Map search={search} position={position} zoom={zoom} /> :
@@ -26,7 +32,7 @@ const App = () => {
                     : b.name.toLowerCase().includes(search);
                 }).map((b, index) => {
               return (
-                <div className="m-2 grow" key={index}>
+                <div className="grow" key={index}>
                   <Card 
                     name={b.name} 
                     brewery_type={b.brewery_type} 
