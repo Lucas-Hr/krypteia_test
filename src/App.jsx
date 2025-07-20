@@ -24,12 +24,12 @@ const App = () => {
 
       {
         view === 'map' ? <Map search={search} position={position} zoom={zoom} /> :
-        <div className=" flex flex-wrap  mt-12">
+        <div className=" flex flex-wrap mt-12">
           {
             brewery.filter((b) => {
                 return search.toLowerCase() === ""
                     ? b
-                    : b.name.toLowerCase().includes(search);
+                    : b.name.toLowerCase().includes(search.toLowerCase());
                 }).map((b, index) => {
               return (
                 <div className="grow" key={index}>
